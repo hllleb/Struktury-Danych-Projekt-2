@@ -186,6 +186,44 @@ namespace DataStructures
             this->count++;
         }
 
+        /// \brief Removes the node before the given node
+        /// \param node The node before which an element will be removed
+        void RemoveBefore(LinkedListNode<T>* node)
+        {
+            if (node == nullptr || node->GetList() != this || this->count < 2)
+            {
+                throw std::exception();
+            }
+
+            auto nodeToRemove = node->previous;
+            if (nodeToRemove == this->head)
+            {
+                this->head = this->head->next;
+            }
+
+            Remove(nodeToRemove);
+            --this->count;
+        }
+
+        /// \brief Removes the node after the given node
+        /// \param node The node after which an element will be removed
+        void RemoveAfter(LinkedListNode<T>* node)
+        {
+            if (node == nullptr || node->GetList() != this || this->count < 2)
+            {
+                throw std::exception();
+            }
+
+            auto nodeToRemove = node->next;
+            if (nodeToRemove == this->head)
+            {
+                this->head = this->head->next;
+            }
+
+            Remove(nodeToRemove);
+            --this->count;
+        }
+
         /// \brief Removes all the elements from the list
         void Clear()
         {
