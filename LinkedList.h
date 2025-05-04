@@ -224,6 +224,32 @@ namespace DataStructures
             --this->count;
         }
 
+        /// \brief Removes the given node from the list
+        /// \param node Node to remove
+        void RemoveNode(LinkedListNode<T>* node)
+        {
+            if (node == nullptr || node->GetList() != this)
+            {
+                throw std::exception();
+            }
+
+            if (this->count == 1)
+            {
+                delete node;
+                this->head = nullptr;
+                this->count = 0;
+                return;
+            }
+
+            if (node == this->head)
+            {
+                this->head = this->head->next;
+            }
+
+            Remove(node);
+            --this->count;
+        }
+
         /// \brief Removes all the elements from the list
         void Clear()
         {
