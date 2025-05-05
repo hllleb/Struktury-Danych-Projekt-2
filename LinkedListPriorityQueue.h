@@ -1,5 +1,5 @@
-#ifndef PROJECT2_ARRAYPRIORITYQUEUE_H
-#define PROJECT2_ARRAYPRIORITYQUEUE_H
+#ifndef PROJECT2_LINKEDLISTPRIORITYQUEUE_H
+#define PROJECT2_LINKEDLISTPRIORITYQUEUE_H
 
 #include "IPriorityQueue.h"
 #include "LinkedList.h"
@@ -14,7 +14,7 @@ namespace DataStructures
             return this->elements.GetCount();
         }
 
-        int IsEmpty() const
+        bool IsEmpty() const
         {
             return this->elements.IsEmpty();
         }
@@ -113,4 +113,4 @@ namespace DataStructures
 
 } // DataStructures
 
-#endif //PROJECT2_ARRAYPRIORITYQUEUE_H
+#endif //PROJECT2_LINKEDLISTPRIORITYQUEUE_H

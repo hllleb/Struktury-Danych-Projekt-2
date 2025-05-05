@@ -17,7 +17,7 @@ namespace DataStructures
             return this->elements.GetLength();
         }
 
-        int IsEmpty() const
+        bool IsEmpty() const
         {
             return this->GetCount() == 0;
         }
